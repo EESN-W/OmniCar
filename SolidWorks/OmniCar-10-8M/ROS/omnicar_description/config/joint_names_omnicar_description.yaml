@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'lfw_joint', 'lbw_joint', 'rfw_joint', 'rbw_joint', 'imu_joint', 'laser_joint', ]

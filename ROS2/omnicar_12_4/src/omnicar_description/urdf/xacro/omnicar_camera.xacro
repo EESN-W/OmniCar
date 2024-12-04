@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="omnicar_camera_xacro">
+    <link name="camera_link">
+    <inertial>
+      <origin xyz="0.14853 2.3141E-06 -0.00027853" rpy="0 0 0" />
+      <mass value="46.659" />
+      <inertia ixx="2.635" ixy="3.4191E-05" ixz="3.6657E-06" iyy="0.49825" iyz="-9.4623E-06" izz="2.8248" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file://$(find omnicar_description)/meshes/camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file://$(find omnicar_description)/meshes/camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="0.29751740983468 0.0074999999999994 5.34552735469429" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="camera_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  </xacro:macro>
+  
+  <!-- Call the macro to create the camera link and joint -->
+  <!-- <xacro:omnicar_camera_xacro /> -->
+
+</robot>

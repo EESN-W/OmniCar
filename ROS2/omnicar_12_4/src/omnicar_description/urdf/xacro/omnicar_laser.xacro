@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="omnicar_laser_xacro">
+    <link name="laser_link">
+    <inertial>
+      <origin xyz="-3.4871E-06 -9.7929E-06 0.12147" rpy="0 0 0" />
+      <mass value="574.73" />
+      <inertia ixx="61.487" ixy="2.4076E-06" ixz="0.00075803" iyy="61.49" iyz="0.0021292" izz="67.671" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file://$(find omnicar_description)/meshes/laser_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color rgba="0 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file://$(find omnicar_description)/meshes/laser_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="laser_joint" type="continuous">
+    <origin xyz="-0.00248259016532015 0.00750000000000028 3.87052735469429" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="laser_link" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+  </xacro:macro>
+
+  <!-- Call the macro to create the laser link and joint -->
+  <!-- <xacro:omnicar_laser_xacro /> -->
+  
+</robot>

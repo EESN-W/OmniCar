@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="OmniCar">
+    <xacro:include filename="$(find omnicar_description)/urdf/xacro/omnicar_base.xacro" />
+    <xacro:include filename="$(find omnicar_description)/urdf/xacro/omnicar_camera.xacro" />
+    <xacro:include filename="$(find omnicar_description)/urdf/xacro/omnicar_fix.xacro" />
+    <xacro:include filename="$(find omnicar_description)/urdf/xacro/omnicar_imu.xacro" />
+    <xacro:include filename="$(find omnicar_description)/urdf/xacro/omnicar_laser.xacro" />
+    <xacro:include filename="$(find omnicar_description)/urdf/xacro/omnicar_wheel.xacro" />
+
+    <!-- Instantiate the omnicar base using the macro -->
+    <xacro:omnicar_base_xacro />
+    <xacro:omnicar_camera_xacro />
+    <xacro:omnicar_fix_xacro />
+    <xacro:omnicar_imu_xacro />
+    <xacro:omnicar_laser_xacro />
+    <xacro:wheel_link_xacro 
+        wheel_name="lfw_link" 
+        mesh_file="lfw_link" 
+        ixx="1903.6" ixy="0.0042877" ixz="-0.00063501" iyy="3077.9" iyz="-0.92374" izz="1903.7"
+        joint_origin_xyz="3.43623010736038 0.7075 1.22983820805844"
+        joint_name="lfw_joint" 
+        axis_xyz="0 1 0"
+        inertial_origin="-5.9137E-05 1.4802 0.013075" />
+
+    <xacro:wheel_link_xacro 
+        wheel_name="lbw_link" 
+        mesh_file="lbw_link" 
+        ixx="1903.6" ixy="-0.014845" ixz="0.0022512" iyy="3077.9" iyz="-0.92363" izz="1903.7"
+        joint_origin_xyz="-3.44119528769102 0.7075 1.22983820805844"
+        joint_name="lbw_joint" 
+        axis_xyz="0 1 0"
+        inertial_origin="0.00021166 1.4802 0.013074" />
+
+    <xacro:wheel_link_xacro 
+        wheel_name="rfw_link" 
+        mesh_file="rfw_link" 
+        ixx="1903.6" ixy="-0.0048169" ixz="-0.00073967" iyy="3077.9" iyz="0.92373" izz="1903.7"
+        joint_origin_xyz="3.43623010736038 -0.692500000000002 1.22983820805844"
+        joint_name="rfw_joint" 
+        axis_xyz="0 1 0"
+        inertial_origin="-6.9733E-05 -1.4802 0.013075" />
+
+    <xacro:wheel_link_xacro 
+        wheel_name="rbw_link" 
+        mesh_file="rbw_link" 
+        ixx="1903.6" ixy="0.01814" ixz="0.0027324" iyy="3077.9" iyz="0.92357" izz="1903.7"
+        joint_origin_xyz="-3.44119528769102 -0.692499999999999 1.22983820805844"
+        joint_name="rbw_joint" 
+        axis_xyz="0 1 0"
+        inertial_origin="0.00025519 -1.4802 0.013073" />
+    
+</robot>
+

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="omnicar_imu_xacro">
+    <link name="imu_link">
+    <inertial>
+      <origin xyz="5.0399E-05 0.00010385 -0.13131" rpy="0 0 0" />
+      <mass value="140.08" />
+      <inertia ixx="5.9042" ixy="-0.0018654" ixz="0.00083804" iyy="5.9039" iyz="0.0017268" izz="9.2672" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file://$(find omnicar_description)/meshes/imu_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color rgba="0 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file://$(find omnicar_description)/meshes/imu_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="imu_joint" type="fixed">
+    <origin xyz="-0.00248259016532093 0.00750000000000028 2.19928352126754" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="imu_link" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+  </xacro:macro>
+  
+  <!-- Call the macro to create the IMU link and joint -->
+  <!-- <xacro:omnicar_imu_xacro /> -->
+
+</robot>

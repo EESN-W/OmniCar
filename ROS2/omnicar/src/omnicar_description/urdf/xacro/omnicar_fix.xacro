@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="omnicar_fix_xacro">
+    <link name="fix_link">
+    <inertial>
+      <origin xyz="-0.084125 -0.00015823 0.85499" rpy="0 0 0" />
+      <mass value="229.3" />
+      <inertia ixx="2483.3" ixy="-0.21299" ixz="138.14" iyy="2057.6" iyz="-0.20622" izz="1272.8" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file://$(find omnicar_description)/meshes/fix_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file://$(find omnicar_description)/meshes/fix_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fix_joint" type="fixed">
+    <origin xyz="-0.0024825901653206 0.00750000000000028 3.22052735469429" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="fix_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+  <gazebo reference="fix_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  </xacro:macro>
+
+  <!-- Call the macro to create the fix link and joint -->
+  <!-- <xacro:omnicar_fix_xacro /> -->
+</robot>

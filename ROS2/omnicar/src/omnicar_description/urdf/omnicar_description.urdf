@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="OmniCar">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0037966 0.0076202 2.2436"
+        rpy="0 0 0" />
+      <mass
+        value="30694" />
+      <inertia
+        ixx="32682"
+        ixy="-20.652"
+        ixz="-16.784"
+        iyy="139110"
+        iyz="1.048"
+        izz="152570" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnicar_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.54902 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnicar_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="lfw_link">
+    <inertial>
+      <origin
+        xyz="-5.9137E-05 1.4802 0.013075"
+        rpy="0 0 0" />
+      <mass
+        value="3564.1" />
+      <inertia
+        ixx="1903.6"
+        ixy="0.0042877"
+        ixz="-0.00063501"
+        iyy="3077.9"
+        iyz="-0.92374"
+        izz="1903.7" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnicar_description/meshes/lfw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnicar_description/meshes/lfw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lfw_joint"
+    type="continuous">
+    <origin
+      xyz="3.43623010736038 0.7075 1.22983820805844"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lfw_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="lbw_link">
+    <inertial>
+      <origin
+        xyz="0.00021166 1.4802 0.013074"
+        rpy="0 0 0" />
+      <mass
+        value="3564.1" />
+      <inertia
+        ixx="1903.6"
+        ixy="-0.014845"
+        ixz="0.0022512"
+        iyy="3077.9"
+        iyz="-0.92363"
+        izz="1903.7" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnicar_description/meshes/lbw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnicar_description/meshes/lbw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lbw_joint"
+    type="continuous">
+    <origin
+      xyz="-3.44119528769102 0.7075 1.22983820805844"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lbw_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="rfw_link">
+    <inertial>
+      <origin
+        xyz="-6.9733E-05 -1.4802 0.013075"
+        rpy="0 0 0" />
+      <mass
+        value="3564.1" />
+      <inertia
+        ixx="1903.6"
+        ixy="-0.0048169"
+        ixz="-0.00073967"
+        iyy="3077.9"
+        iyz="0.92373"
+        izz="1903.7" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnicar_description/meshes/rfw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnicar_description/meshes/rfw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rfw_joint"
+    type="continuous">
+    <origin
+      xyz="3.43623010736038 -0.692500000000002 1.22983820805844"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rfw_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="rbw_link">
+    <inertial>
+      <origin
+        xyz="0.00025519 -1.4802 0.013073"
+        rpy="0 0 0" />
+      <mass
+        value="3564.1" />
+      <inertia
+        ixx="1903.6"
+        ixy="0.01814"
+        ixz="0.0027324"
+        iyy="3077.9"
+        iyz="0.92357"
+        izz="1903.7" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnicar_description/meshes/rbw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnicar_description/meshes/rbw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rbw_joint"
+    type="continuous">
+    <origin
+      xyz="-3.44119528769102 -0.692499999999999 1.22983820805844"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rbw_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="imu_link">
+    <inertial>
+      <origin
+        xyz="5.0399E-05 0.00010385 -0.13131"
+        rpy="0 0 0" />
+      <mass
+        value="140.08" />
+      <inertia
+        ixx="5.9042"
+        ixy="-0.0018654"
+        ixz="0.00083804"
+        iyy="5.9039"
+        iyz="0.0017268"
+        izz="9.2672" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnicar_description/meshes/imu_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnicar_description/meshes/imu_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="imu_joint"
+    type="fixed">
+    <origin
+      xyz="-0.00248259016532093 0.00750000000000028 2.19928352126754"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="imu_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="fix_link">
+    <inertial>
+      <origin
+        xyz="-0.084125 -0.00015823 0.85499"
+        rpy="0 0 0" />
+      <mass
+        value="2209.3" />
+      <inertia
+        ixx="2483.3"
+        ixy="-0.21299"
+        ixz="138.14"
+        iyy="2057.6"
+        iyz="-0.20622"
+        izz="1272.8" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnicar_description/meshes/fix_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnicar_description/meshes/fix_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fix_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0024825901653206 0.00750000000000028 3.22052735469429"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="fix_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="laser_link">
+    <inertial>
+      <origin
+        xyz="-3.4871E-06 -9.7929E-06 0.12147"
+        rpy="0 0 0" />
+      <mass
+        value="574.73" />
+      <inertia
+        ixx="61.487"
+        ixy="2.4076E-06"
+        ixz="0.00075803"
+        iyy="61.49"
+        iyz="0.0021292"
+        izz="67.671" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnicar_description/meshes/laser_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnicar_description/meshes/laser_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="laser_joint"
+    type="continuous">
+    <origin
+      xyz="-0.00248259016532015 0.00750000000000028 3.87052735469429"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="camera_link">
+    <inertial>
+      <origin
+        xyz="0.14853 2.3141E-06 -0.00027853"
+        rpy="0 0 0" />
+      <mass
+        value="46.659" />
+      <inertia
+        ixx="2.635"
+        ixy="3.4191E-05"
+        ixz="3.6657E-06"
+        iyy="0.49825"
+        iyz="-9.4623E-06"
+        izz="2.8248" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnicar_description/meshes/camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://omnicar_description/meshes/camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_joint"
+    type="fixed">
+    <origin
+      xyz="0.29751740983468 0.0074999999999994 5.34552735469429"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
